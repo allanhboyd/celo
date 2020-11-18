@@ -15,10 +15,12 @@ import {
   Profile,
   Splash
 } from "./Screens";
+import Splashscreen from "../modules/splashscreen";
 
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
   <AuthStack.Navigator>
+
     <AuthStack.Screen
       name="SignIn"
       component={SignIn}
@@ -125,13 +127,13 @@ export default () => {
   React.useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 3000);
   }, []);
 
   if (isLoading) {
     // return <Splash />;
+    return <Splashscreen />;
   }
-
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>

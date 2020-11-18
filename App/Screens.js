@@ -6,6 +6,8 @@ import { AuthContext } from "./context";
 import backgroundImage from '../assets/bg1.png';
 import logo from '../assets/wb_logo.png';
 import colors from '../styles/colors';
+import SplashScreen from '../modules/splashscreen'
+import Loginpage from "../modules/loginpage";
 
 
 const ScreenContainer = ({ children }) => (
@@ -72,54 +74,58 @@ export const Profile = ({ navigation }) => {
   );
 };
 
-export const Splash = () => (
-  <ScreenContainer>
-    <Text>Loading...</Text>
-  </ScreenContainer>
-);
+export const Splash = ({navigation}) => {
+    return(
+      <SplashScreen/>
+    )
+  };
 
 export const SignIn = ({ navigation }) => {
   const { signIn } = React.useContext(AuthContext);
 
-  return (
-    <ImageBackground style={styles.image}>
-    <TouchableWithoutFeedback style={styles.container}>
-   <View>
-       <Image source={logo}  />
-       <Text style={styles.main_description}>The Anonymous</Text>
-       <Text style={styles.main_title}>Whistle</Text>
-   </View>
-   <View >
-      <TextInput
-          
-           textContentType='display_name'
-           placeholder="Display name"
-           name="displayName"
-           onChangeText={display_name => this.setState({display_name})}>
-       </TextInput>
-       </View>
-       <View >
-               <TextInput
-              
-               placeholder="Your secret"
-               name="secret_code"
-               secureTextEntry={true}
-               onChangeText={secret_code => this.setState({secret_code})}>
-           </TextInput>
-       </View>
+  return(
+    <Loginpage navigator = {navigation} />
+  )
 
-       <TouchableOpacity style={styles.red_button}>
-           <Text
-               color="blue"
-               onPress={() => navigation.push("CreateAccount")}
-               style={styles.red_button_text}
-           >
-           Enter
-           </Text>
-       </TouchableOpacity>
-</TouchableWithoutFeedback>
-</ImageBackground>
-)
+//   return (
+//     <ImageBackground style={styles.image}>
+//     <TouchableWithoutFeedback style={styles.container}>
+//    <View>
+//        <Image source={logo}  />
+//        <Text style={styles.main_description}>The Anonymous</Text>
+//        <Text style={styles.main_title}>Whistle</Text>
+//    </View>
+//    <View >
+//       <TextInput
+          
+//            textContentType='display_name'
+//            placeholder="Display name"
+//            name="displayName"
+//            onChangeText={display_name => this.setState({display_name})}>
+//        </TextInput>
+//        </View>
+//        <View >
+//                <TextInput
+              
+//                placeholder="Your secret"
+//                name="secret_code"
+//                secureTextEntry={true}
+//                onChangeText={secret_code => this.setState({secret_code})}>
+//            </TextInput>
+//        </View>
+
+//        <TouchableOpacity style={styles.red_button}>
+//            <Text
+//                color="blue"
+//                onPress={() => navigation.push("CreateAccount")}
+//                style={styles.red_button_text}
+//            >
+//            Enter
+//            </Text>
+//        </TouchableOpacity>
+// </TouchableWithoutFeedback>
+// </ImageBackground>
+// )
 
 };
 
