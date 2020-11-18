@@ -7,12 +7,11 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { AuthContext } from "./context";
 import {
   SignIn,
-  CreateAccount,
   Search,
   Home,
   Details,
   Search2,
-  Profile,
+  ProfileScreen,
   Splash
 } from "./Screens";
 import Splashscreen from "../modules/splashscreen";
@@ -20,17 +19,22 @@ import Splashscreen from "../modules/splashscreen";
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
   <AuthStack.Navigator>
+    <AuthStack.Screen
+      name="Profile"
+      component={ProfileScreen}
+      options={{ title: "Profile", headerShown:false}}
+    />
 
     <AuthStack.Screen
       name="SignIn"
-      component={SignIn}
+      component={ProfileScreen}
       options={{ title: "Sign In", headerShown:false}}
     />
-    <AuthStack.Screen
+    {/* <AuthStack.Screen
       name="CreateAccount"
       component={CreateAccount}
       options={{ title: "Create Account" }}
-    />
+    /> */}
   </AuthStack.Navigator>
 );
 
