@@ -5,8 +5,9 @@ import SplashScreen from '../modules/splashscreen'
 import Loginpage from "../modules/loginpage";
 import Profile from '../modules/profile';
 import Articlelist from "../modules/articlelist";
-import ReadArticle from '../modules/readarticle'
-import Transfer from '../modules/transfer'
+import ReadArticle from '../modules/readarticle';
+import Transfer from '../modules/transfer';
+import TransferHistory from '../modules/transfer_history';
 
 
 const ScreenContainer = ({ children }) => (
@@ -75,6 +76,10 @@ export const Articles = ({navigation}) =>{
 
 export const TransferAmount = ({navigation}) => {
   return(<Transfer/>);
+}
+
+export const History = ({navigation}) =>{
+  return(<TransferHistory/>)
 }
 
 export const Read = ({navigation}) => {

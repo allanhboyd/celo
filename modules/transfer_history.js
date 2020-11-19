@@ -11,12 +11,14 @@ import TransparentToolbar from '../components/transparent_toolbar'
 import Background from '../components/background_alternate'
 import WalletCard from '../components/wallet_card'
 
+import TransferListItem from '../components/tranfer_history_list_item'
+
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
 
-export default class Transfer extends Component {
+export default class TransferHistory extends Component {
 
   constructor(props) {
     super(props);
@@ -31,49 +33,51 @@ export default class Transfer extends Component {
     return (
       <View data-layer="cfefbdd0-dab9-4381-a77a-6440e134cdd1" style={styles.transfer}>
         <Background />
-        <TransparentToolbar title='Sponsor' />
+        <TransparentToolbar title='Wallet' />
 
-        <ScrollView flexDirection='column'>
+        <WalletCard amount={3000} />
 
-        <WalletCard amount = {3000}/>
+        <Text data-layer="8dcb2581-dfc6-43c5-9e35-b80c0326ae99" style={styles.transfer_title}>Recent Transactions</Text>
 
-{/* 
-          <View data-layer="a13df700-321b-4ee0-a528-b86ef8d32702" style={[styles.transfer_walletcard, styles.transfer_walletcard_cardbackground]}>
-            <ReactImage data-layer="474a0b84-9abb-4a53-9791-c84975c0d45b" source={require('../assets/transfericons.png')} style={styles.transfer_walletcard_transfericons} />
-            <Text data-layer="abe0ebbd-c24a-45c9-a272-6589a56d9251" style={styles.transfer_walletcard_balancelabel}>My Balance</Text>
-            <Text data-layer="8eaaa6b9-e43c-4a40-bbde-81f089a21289" style={styles.transfer_walletcard_balance}>3,000</Text>
-          </View> */}
+        <FlatList
+        
+        data = {[
+         { name : "AnonymousA",
+          amount : 1000},
+          { name : "AnonymousB",
+          amount : 2000},
+          { name : "AnonymousC",
+          amount : 3000},
+          { name : "AnonymousD",
+          amount : 4000},
+          { name : "AnonymousE",
+          amount : 5000},
+          { name : "AnonymousF",
+          amount : 6000},
+          { name : "AnonymousG",
+          amount : 7000},
 
-          <Text data-layer="8dcb2581-dfc6-43c5-9e35-b80c0326ae99" style={styles.transfer_title}>Transfer</Text>
+        ]}
+        
+        renderItem = {(item)=><TransferListItem data = {item} />}
+        
+        keyExtractor={item => item.name}
+        contentContainerStyle={{
+          flexGrow: 1,
+        }}
 
-          <UserLabel />
-
-          <View data-layer="67d3cbc3-940b-4d3a-ac91-d99f16001b87" style={[styles.transfer_amountinput,]}>
-            <TextInput data-layer="647296ed-f0f0-437a-aeed-91513dfcf215" style={styles.transfer_amountinput_enterAmount} placeholder='Enter Amount' />
-            <View data-layer="cfb06a65-bcb7-4bdb-9c72-b2a9091f1584" style={styles.transfer_amountinput_rectangle12}></View>
-          </View>
-
-          <TouchableOpacity style={[styles.transfer_transferbutton]}>
-            <View data-layer="eaab051d-fd15-4dda-b8e8-306f0a2befe0" style={[styles.transfer_transferbutton, styles.transfer_transferbutton_rectangle13]}>
-              <Text data-layer="51a79d1c-3e04-49c1-aa0f-e1be09b1d126" style={styles.transfer_transferbutton_continue}>Continue</Text>
-              <Svg rotation={180} data-layer="aa98bc0f-8d67-4ac5-a8cb-b48b10251fc5" style={styles.transfer_transferbutton_iconAwesomeArrowLeft} preserveAspectRatio="none" viewBox="-0.00351560115814209 2.6472654342651367 18.245361328125 17.7830810546875" fill="rgba(248, 248, 248, 1)"><SvgPath d="M 10.4843111038208 19.2392463684082 L 9.580293655395508 20.14326477050781 C 9.197510719299316 20.52604675292969 8.578543663024902 20.52604675292969 8.199833869934082 20.14326477050781 L 0.2835710644721985 12.23107433319092 C -0.09921117126941681 11.84829139709473 -0.09921117126941681 11.22932529449463 0.2835710644721985 10.85061454772949 L 8.199833869934082 2.934351921081543 C 8.582615852355957 2.551569938659668 9.201582908630371 2.551569938659668 9.580293655395508 2.934351921081543 L 10.4843111038208 3.838369846343994 C 10.87116527557373 4.225224018096924 10.86302089691162 4.856407642364502 10.46802234649658 5.23511791229248 L 5.561079502105713 9.909948348999023 L 17.26444435119629 9.909948348999023 C 17.80603981018066 9.909948348999023 18.24176025390625 10.34566879272461 18.24176025390625 10.88726425170898 L 18.24176025390625 12.19035243988037 C 18.24176025390625 12.73194789886475 17.80603981018066 13.16766929626465 17.26444435119629 13.16766929626465 L 5.561079502105713 13.16766929626465 L 10.46802234649658 17.84249877929688 C 10.86709308624268 18.2212085723877 10.87523746490479 18.85239219665527 10.4843111038208 19.2392463684082 Z" /></Svg>
-            </View>
-
-          </TouchableOpacity>
-
-
-        </ScrollView>
+        />
 
       </View>
     );
   }
 }
 
-Transfer.propTypes = {
+TransferHistory.propTypes = {
 
 }
 
-Transfer.defaultProps = {
+TransferHistory.defaultProps = {
 
 }
 
@@ -104,12 +108,14 @@ const styles = StyleSheet.create({
     // "position": "absolute",
     "backgroundColor": "rgba(255, 255, 255, 0)",
     "color": "rgba(80, 80, 80, 1)",
-    "fontSize": 27,
+    "fontSize": 20,
     "fontWeight": "400",
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-    margin: 30,
+    marginTop: 10,
+    marginStart: 30,
+    marginBottom: 10,
     // "width": 110,
     // "height": 37,
     // "left": 30,

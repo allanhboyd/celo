@@ -13,10 +13,11 @@ export default class UserLabel extends Component {
 
 
     render() {
+      console.log(this.props.data)
         return (
             <View data-layer="9f99b535-71e2-4976-af5e-3b1a19e3041c" style={styles.readarticle_userobject}>
                 <Image data-layer="7cd6d44e-3a7b-476f-8ec2-6b865beea251" source={require('../assets/usericon.png')} style={styles.readarticle_userobject_usericon} />
-                <Text data-layer="f515399d-e10b-48c7-a845-80e11e4a2987" style={styles.readarticle_userobject_username}>AnonymousB</Text>
+                <Text data-layer="f515399d-e10b-48c7-a845-80e11e4a2987" style={styles.readarticle_userobject_username}>{this.props.data}</Text>
                 <Text data-layer="ec51e341-3219-4d55-ac26-f9d83a0e9d8f" style={styles.readarticle_userobject_x1200am}>12:00am</Text>
                 <Text data-layer="c22bdecb-67f1-48c4-b250-5527ed2d37c5" style={styles.readarticle_userobject_x1stJune2020}>1st June 2020</Text>
             </View>
