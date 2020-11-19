@@ -21,9 +21,8 @@ export default class ArticleListItem extends Component {
         console.log(this.props.data)
         return (
             <View data-layer="3df68c1b-5f5e-480b-9640-bc1342f45d9c" style={[styles.articlelist_repeatGrid1_post959e7595, styles.articlelist_repeatGrid1_post959e7595_postbackground7f4d02e0]}>
-                {/* <View data-layer="8ce113b9-a6f7-44fc-b844-0cc3bb660ccb" style={styles.articlelist_repeatGrid1_post959e7595_postbackground7f4d02e0}></View> */}
+                
                 <View style={styles.row} >
-
 
                     <ReactImage data-layer="aff2d118-e243-43f4-ab99-41c538aa591b" source={require('../assets/postusericon.png')} style={styles.articlelist_repeatGrid1_post959e7595_postusericon7653ed73} />
 

@@ -13,7 +13,8 @@ import {
   Search2,
   ProfileScreen,
   Splash,
-  Articles
+  Articles,
+  Read
 } from "./Screens";
 import Splashscreen from "../modules/splashscreen";
 
@@ -22,7 +23,7 @@ const AuthStackScreen = () => (
   <AuthStack.Navigator>
     <AuthStack.Screen
       name="Profile"
-      component={Articles}
+      component={Read}
       options={{ title: "Profile", headerShown:false}}
     />
 
