@@ -56,6 +56,18 @@ export default class TransferHistory extends Component {
           amount : 6000},
           { name : "AnonymousG",
           amount : 7000},
+          { name : "AnonymousH",
+          amount : 8000},
+          { name : "AnonymousI",
+          amount : 9000},
+          { name : "AnonymousJ",
+          amount : 10000},
+          { name : "AnonymousK",
+          amount : 11000},
+          { name : "AnonymousL",
+          amount : 12000},
+          { name : "AnonymousM",
+          amount : 13000},
 
         ]}
         

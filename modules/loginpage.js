@@ -34,7 +34,9 @@ export default class Loginpage extends Component {
                 <TextInput data-layer="459c9658-55ba-458d-940b-f28ebef092f4" style={styles.loginpage_diplaynameinput_label} placeholder = 'Your Secret'></TextInput>
             </View>
             <TouchableOpacity style={[styles.loginpage_redbutton, styles.loginpage_redbutton_rectangle3]} >
-                <Text data-layer="db5d44fb-d0d0-4a90-a323-544d27597fda" style={styles.loginpage_redbutton_enter}>Enter</Text>
+                <Text data-layer="db5d44fb-d0d0-4a90-a323-544d27597fda" style={styles.loginpage_redbutton_enter}
+                onPress={()=> {this.props.navigator.push("Profile")}}
+                >Enter</Text>
             </TouchableOpacity>
       </View>
     );

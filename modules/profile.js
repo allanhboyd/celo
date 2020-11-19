@@ -5,7 +5,6 @@ import Svg, { } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
 import TransparentToolbar from '../components/transparent_toolbar';
 import BottomNavigator from '../components/bottom_nav';
-import { ScreenContainer } from 'react-native-screens';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -25,7 +24,7 @@ export default class Profile extends Component {
     return (
       <View data-layer="978a9676-a25a-4e0e-ba32-5ac238ce4a12" style={styles.profile}>
         <ImageBackground data-layer="863fee16-4d70-41f7-8021-e88c4a9bf788" source={require('../assets/appbackground.png')} style={styles.profile_appbackground} />
-        <TransparentToolbar title='Profile' />
+        <TransparentToolbar title='Profile' navigator_tb = {this.props.navigator} />
         <ScrollView style = {{height:windowHeight, width : windowWidth}}>
           <Image data-layer="0318260c-6fa1-435b-a538-2f528095f1a1" source={require('../assets/usericon.png')} style={styles.profile_usericon} />
           <Text data-layer="62878410-69d6-49e9-99ee-a62a819c7682" style={styles.profile_label}>Display Name</Text>
