@@ -4,6 +4,7 @@ import { Image as ReactImage } from 'react-native';
 import SolidToolbar from '../components/solid_toolbar'
 import UserLabel from '../components/user_date_label'
 import Background from '../components/background_alternate'
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -23,17 +24,20 @@ export default class Readarticle extends Component {
 
     return (
       <View data-layer="e380a9c2-82cf-40b6-86af-3fe7e6f895a3" style={styles.readarticle}>
-        <Background/>
-        <SolidToolbar title='Posts' navigator_tb = {this.props.navigator} />
+        <Background />
+        <SolidToolbar title='Posts' navigator_tb={this.props.navigator} />
         <ScrollView>
 
-        <Text data-layer="36ce04ac-c550-40ff-9fa8-ed3cdc160c82" style={styles.readarticle_articletitle}>This is a whistle
+          <Text data-layer="36ce04ac-c550-40ff-9fa8-ed3cdc160c82" style={styles.readarticle_articletitle}>This is a whistle
 blower's Test</Text>
-          <UserLabel/>
+          <TouchableOpacity onPress = {()=>    this.props.navigator.push("Transfer") }>
+            <UserLabel />
+          </TouchableOpacity>
+
           <Text data-layer="e2b66f8f-ad6d-4f77-81de-5fe2be4e400c" style={styles.readarticle_articletext}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</Text>
         </ScrollView>
-        
+
 
       </View>
     );
@@ -64,13 +68,13 @@ const styles = StyleSheet.create({
     "paddingLeft": 0,
     "width": windowWidth,
     // "height": 'auto',
-    flex : 1,
+    flex: 1,
     "left": 0,
     "top": 0,
     "right": 0,
     "bottom": 0
   },
- 
+
   "readarticle_articletitle": {
     "opacity": 1,
     // "position": "absolute",
@@ -105,7 +109,7 @@ const styles = StyleSheet.create({
     "fontStyle": "normal",
     "fontFamily": "Roboto",
     "textAlign": "left",
-   "margin":20,
+    "margin": 20,
     "width": "auto",
     "height": "auto",
     // "left": 28,

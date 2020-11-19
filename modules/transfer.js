@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from "prop-types";
-import { StyleSheet, Text, View, TextInput, FlatList, Picker, ScrollView, TouchableHighlight, Dimensions, TouchableOpacity } from 'react-native';
-import { Image as ReactImage } from 'react-native';
-import Svg, { Defs, Pattern } from 'react-native-svg';
+import { StyleSheet, Text, View, TextInput, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import Svg, {  } from 'react-native-svg';
 import { Path as SvgPath } from 'react-native-svg';
-import { Text as SvgText } from 'react-native-svg';
-import { Image as SvgImage } from 'react-native-svg';
 import UserLabel from '../components/user_date_label';
 import TransparentToolbar from '../components/transparent_toolbar'
 import Background from '../components/background_alternate'
 import WalletCard from '../components/wallet_card'
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 
 

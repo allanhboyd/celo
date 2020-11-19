@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ImageBackground, Dimensions, StatusBar, FlatLis
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import ArticleListItem from '../components/artlicle_list_item'
 import BottomNavigator from '../components/bottom_nav';
+import { Icon } from 'react-native-elements'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -24,8 +25,8 @@ export default class Articlelist extends Component {
         <ImageBackground data-layer="e71fa9e2-5bb1-4161-8b7e-85a365aa0607" source={require('../assets/maskGroup3.png')} style={styles.articlelist_maskGroup3} />
         <Image data-layer="f8b8d495-3749-44fb-a45f-1fd7c6a46afe" source={require('../assets/menu.png')} style={styles.articlelist_menu} />
 
-     
-        <Image data-layer="598fcfda-0feb-4ed1-bb13-4ed9c387729f" source={require('../assets/wallet.png')} style={styles.articlelist_wallet} />
+    
+        <Icon data-layer="598fcfda-0feb-4ed1-bb13-4ed9c387729f" source={require('../assets/wallet.png')} style={styles.articlelist_wallet} />
         
 
         <Text data-layer="758b1726-8ad4-4b0c-aab7-a4d10cbb7a33" style={styles.articlelist_username}>AnonymousA</Text>

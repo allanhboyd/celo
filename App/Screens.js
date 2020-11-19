@@ -8,6 +8,7 @@ import Articlelist from "../modules/articlelist";
 import ReadArticle from '../modules/readarticle';
 import Transfer from '../modules/transfer';
 import TransferHistory from '../modules/transfer_history';
+import NewPost from "../modules/new_post";
 
 
 const ScreenContainer = ({ children }) => (
@@ -99,6 +100,10 @@ export const SignIn = ({ navigation }) => {
   )
 
 };
+
+export const CreatePost = ({navigation}) => {
+  return(<NewPost/>)
+}
 
 const styles = StyleSheet.create({
 

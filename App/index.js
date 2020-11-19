@@ -16,7 +16,8 @@ import {
   Splash,
   History,
   Read,
-  Articles
+  Articles,
+  CreatePost
 } from "./Screens";
 import Splashscreen from "../modules/splashscreen";
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -30,6 +31,14 @@ const AuthStackScreen = () => (
       component={SignIn}
       options={{ title: "Sign In", headerShown: false }}
     />
+
+    <AuthStack.Screen
+      name="Create"
+      component={CreatePost}
+      options={{ title: "Create", headerShown: false }}
+    />
+
+    
 
     <AuthStack.Screen
       name="Articles"
@@ -49,9 +58,9 @@ const AuthStackScreen = () => (
       options={{ title: "Profile", headerShown: false }}
     />
 
-   
 
-<AuthStack.Screen
+
+    <AuthStack.Screen
       name="Read"
       component={Read}
       options={{ title: "Read", headerShown: false }}
@@ -66,7 +75,7 @@ const AuthStackScreen = () => (
     />
 
 
-<AuthStack.Screen
+    <AuthStack.Screen
       name="History"
       component={History}
       options={{ title: "History", headerShown: false }}
