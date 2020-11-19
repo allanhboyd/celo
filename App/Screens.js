@@ -4,6 +4,7 @@ import { AuthContext } from "./context";
 import SplashScreen from '../modules/splashscreen'
 import Loginpage from "../modules/loginpage";
 import Profile from '../modules/profile';
+import Articlelist from "../modules/articlelist";
 
 
 const ScreenContainer = ({ children }) => (
@@ -65,6 +66,10 @@ export const ProfileScreen = ({ navigation }) => {
    <Profile navigator = {navigation} />
   );
 };
+
+export const Articles = ({navigation}) =>{
+  return(<Articlelist/>);
+}
 
 export const Splash = ({}) => {
     return(
