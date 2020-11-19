@@ -12,11 +12,11 @@ import {
   Details,
   Search2,
   ProfileScreen,
-  Splash,
-  Articles,
-  Read,
   TransferAmount,
-  History
+  Splash,
+  History,
+  Read,
+  Articles
 } from "./Screens";
 import Splashscreen from "../modules/splashscreen";
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -25,31 +25,53 @@ const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
   <AuthStack.Navigator>
 
-
-    <AuthStack.Screen
-      name="Wallet"
-      component={ProfileScreen}
-      options={{ title: "Profile", headerShown: false }}
-    />
-
-    <AuthStack.Screen
+<AuthStack.Screen
       name="SignIn"
       component={SignIn}
       options={{ title: "Sign In", headerShown: false }}
     />
 
+    <AuthStack.Screen
+      name="Articles"
+      component={Articles}
+      options={{ title: "Articles", headerShown: false }}
+    />
 
+    <AuthStack.Screen
+      name="Transfer"
+      component={TransferAmount}
+      options={{ title: "Transfer", headerShown: false }}
+    />
 
     <AuthStack.Screen
       name="Profile"
       component={ProfileScreen}
-      options={{ title: "Sign In", headerShown: false }}
+      options={{ title: "Profile", headerShown: false }}
     />
-    {/* <AuthStack.Screen
-      name="CreateAccount"
-      component={CreateAccount}
-      options={{ title: "Create Account" }}
-    /> */}
+
+   
+
+<AuthStack.Screen
+      name="Read"
+      component={Read}
+      options={{ title: "Read", headerShown: false }}
+    />
+
+
+
+    <AuthStack.Screen
+      name="TransferAmount"
+      component={TransferAmount}
+      options={{ title: "TransferAmount", headerShown: false }}
+    />
+
+
+<AuthStack.Screen
+      name="History"
+      component={History}
+      options={{ title: "History", headerShown: false }}
+    />
+
   </AuthStack.Navigator>
 );
 

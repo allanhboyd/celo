@@ -24,7 +24,7 @@ export default class Readarticle extends Component {
     return (
       <View data-layer="e380a9c2-82cf-40b6-86af-3fe7e6f895a3" style={styles.readarticle}>
         <Background/>
-        <SolidToolbar title='Posts' />
+        <SolidToolbar title='Posts' navigator_tb = {this.props.navigator} />
         <ScrollView>
 
         <Text data-layer="36ce04ac-c550-40ff-9fa8-ed3cdc160c82" style={styles.readarticle_articletitle}>This is a whistle

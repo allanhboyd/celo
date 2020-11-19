@@ -12,6 +12,7 @@ import Background from '../components/background_alternate'
 import WalletCard from '../components/wallet_card'
 
 import TransferListItem from '../components/tranfer_history_list_item'
+import BottomNavigator from '../components/bottom_nav'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -33,7 +34,7 @@ export default class TransferHistory extends Component {
     return (
       <View data-layer="cfefbdd0-dab9-4381-a77a-6440e134cdd1" style={styles.transfer}>
         <Background />
-        <TransparentToolbar title='Wallet' />
+        <TransparentToolbar title='Wallet' navigator_tb = {this.props.navigator} />
 
         <WalletCard amount={3000} />
 
@@ -79,6 +80,8 @@ export default class TransferHistory extends Component {
         }}
 
         />
+
+        <BottomNavigator profile = {true} navigator={this.props.navigator} />
 
       </View>
     );

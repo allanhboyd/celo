@@ -31,18 +31,11 @@ export default class Transfer extends Component {
     return (
       <View data-layer="cfefbdd0-dab9-4381-a77a-6440e134cdd1" style={styles.transfer}>
         <Background />
-        <TransparentToolbar title='Sponsor' />
+        <TransparentToolbar title='Sponsor' navigator_tb={this.props.navigator} />
 
         <ScrollView flexDirection='column'>
 
-        <WalletCard amount = {3000}/>
-
-{/* 
-          <View data-layer="a13df700-321b-4ee0-a528-b86ef8d32702" style={[styles.transfer_walletcard, styles.transfer_walletcard_cardbackground]}>
-            <ReactImage data-layer="474a0b84-9abb-4a53-9791-c84975c0d45b" source={require('../assets/transfericons.png')} style={styles.transfer_walletcard_transfericons} />
-            <Text data-layer="abe0ebbd-c24a-45c9-a272-6589a56d9251" style={styles.transfer_walletcard_balancelabel}>My Balance</Text>
-            <Text data-layer="8eaaa6b9-e43c-4a40-bbde-81f089a21289" style={styles.transfer_walletcard_balance}>3,000</Text>
-          </View> */}
+          <WalletCard amount={3000} />
 
           <Text data-layer="8dcb2581-dfc6-43c5-9e35-b80c0326ae99" style={styles.transfer_title}>Transfer</Text>
 
@@ -53,7 +46,7 @@ export default class Transfer extends Component {
             <View data-layer="cfb06a65-bcb7-4bdb-9c72-b2a9091f1584" style={styles.transfer_amountinput_rectangle12}></View>
           </View>
 
-          <TouchableOpacity style={[styles.transfer_transferbutton]}>
+          <TouchableOpacity style={[styles.transfer_transferbutton]} onPress={() => this.props.navigator.push("History")} >
             <View data-layer="eaab051d-fd15-4dda-b8e8-306f0a2befe0" style={[styles.transfer_transferbutton, styles.transfer_transferbutton_rectangle13]}>
               <Text data-layer="51a79d1c-3e04-49c1-aa0f-e1be09b1d126" style={styles.transfer_transferbutton_continue}>Continue</Text>
               <Svg rotation={180} data-layer="aa98bc0f-8d67-4ac5-a8cb-b48b10251fc5" style={styles.transfer_transferbutton_iconAwesomeArrowLeft} preserveAspectRatio="none" viewBox="-0.00351560115814209 2.6472654342651367 18.245361328125 17.7830810546875" fill="rgba(248, 248, 248, 1)"><SvgPath d="M 10.4843111038208 19.2392463684082 L 9.580293655395508 20.14326477050781 C 9.197510719299316 20.52604675292969 8.578543663024902 20.52604675292969 8.199833869934082 20.14326477050781 L 0.2835710644721985 12.23107433319092 C -0.09921117126941681 11.84829139709473 -0.09921117126941681 11.22932529449463 0.2835710644721985 10.85061454772949 L 8.199833869934082 2.934351921081543 C 8.582615852355957 2.551569938659668 9.201582908630371 2.551569938659668 9.580293655395508 2.934351921081543 L 10.4843111038208 3.838369846343994 C 10.87116527557373 4.225224018096924 10.86302089691162 4.856407642364502 10.46802234649658 5.23511791229248 L 5.561079502105713 9.909948348999023 L 17.26444435119629 9.909948348999023 C 17.80603981018066 9.909948348999023 18.24176025390625 10.34566879272461 18.24176025390625 10.88726425170898 L 18.24176025390625 12.19035243988037 C 18.24176025390625 12.73194789886475 17.80603981018066 13.16766929626465 17.26444435119629 13.16766929626465 L 5.561079502105713 13.16766929626465 L 10.46802234649658 17.84249877929688 C 10.86709308624268 18.2212085723877 10.87523746490479 18.85239219665527 10.4843111038208 19.2392463684082 Z" /></Svg>

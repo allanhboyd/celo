@@ -51,7 +51,7 @@ export default class Profile extends Component {
             <ReactImage data-layer="4681f649-545f-4fe6-8a5a-ce006c45e969" source={require('../assets/version_icon.png')} style={styles.profile_versiongroup_icon} />
           </View>
         </ScrollView>
-        <BottomNavigator navigator={this.props.navigator} />
+        <BottomNavigator profile = {true} navigator={this.props.navigator} />
       </View>
     );
   }
@@ -80,6 +80,11 @@ const styles = StyleSheet.create({
     "paddingLeft": 0,
     "width": windowWidth,
     "height": windowHeight,
+    "left": 0,
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    flex : 1
   },
   "row": {
     flexDirection: 'row'

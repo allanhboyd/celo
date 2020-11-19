@@ -35,7 +35,7 @@ export default class Loginpage extends Component {
             </View>
             <TouchableOpacity style={[styles.loginpage_redbutton, styles.loginpage_redbutton_rectangle3]} >
                 <Text data-layer="db5d44fb-d0d0-4a90-a323-544d27597fda" style={styles.loginpage_redbutton_enter}
-                onPress={()=> {this.props.navigator.push("Profile")}}
+                onPress={()=> {this.props.navigator.push("Articles")}}
                 >Enter</Text>
             </TouchableOpacity>
       </View>

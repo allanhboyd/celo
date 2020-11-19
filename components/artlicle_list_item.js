@@ -21,7 +21,7 @@ export default class ArticleListItem extends Component {
         console.log(this.props.data)
         return (
             <View data-layer="3df68c1b-5f5e-480b-9640-bc1342f45d9c" style={[styles.articlelist_repeatGrid1_post959e7595, styles.articlelist_repeatGrid1_post959e7595_postbackground7f4d02e0]}>
-                
+
                 <View style={styles.row} >
 
                     <ReactImage data-layer="aff2d118-e243-43f4-ab99-41c538aa591b" source={require('../assets/postusericon.png')} style={styles.articlelist_repeatGrid1_post959e7595_postusericon7653ed73} />
@@ -30,7 +30,7 @@ export default class ArticleListItem extends Component {
 
                         <View style={styles.row}>
                             <TouchableOpacity>
-        <Text data-layer="18bcc8a6-b4fe-4ebc-bf48-67960d6ee29b" style={styles.articlelist_repeatGrid1_post959e7595_postusernamec0ba6d22}>{this.props.data.item.name}</Text>
+                                <Text data-layer="18bcc8a6-b4fe-4ebc-bf48-67960d6ee29b" style={styles.articlelist_repeatGrid1_post959e7595_postusernamec0ba6d22}>{this.props.data.item.name}</Text>
                             </TouchableOpacity>
 
                             <Svg data-layer="7b1a9233-ca01-4a23-8df0-c771afb696d5" style={styles.articlelist_repeatGrid1_post959e7595_dividerdb0681eb} preserveAspectRatio="none" viewBox="-0.75 -0.75 4.5 4.5" fill="rgba(112, 112, 112, 1)"><SvgPath d="M 1.5 0 C 2.328427076339722 0 3 0.6715729236602783 3 1.5 C 3 2.328427076339722 2.328427076339722 3 1.5 3 C 0.6715729236602783 3 0 2.328427076339722 0 1.5 C 0 0.6715729236602783 0.6715729236602783 0 1.5 0 Z" /></Svg>
@@ -39,7 +39,7 @@ export default class ArticleListItem extends Component {
                         </View>
                         <Text data-layer="ffd15407-b58b-4a25-87e0-4e022db001a7" style={styles.articlelist_repeatGrid1_post959e7595_postdate9f991d34}>1st June 2020</Text>
                         <Text data-layer="e0655111-988e-43a0-bca9-03ec3abe0d78" style={styles.articlelist_repeatGrid1_post959e7595_postshort2bafe453}>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigator.push("Read")}>
                             <Text data-layer="c26e4508-0966-467e-a4bf-2ca0bc44cc19" style={styles.articlelist_repeatGrid1_post959e7595_viewmoref7978898}>View More</Text>
                         </TouchableOpacity>
 
@@ -68,12 +68,12 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         marginTop: 20,
         marginBottom: 20
-      },
-      "row": {
+    },
+    "row": {
         flexDirection: 'row',
         alignItems: 'center',
         height: 'auto'
-      },
+    },
     "articlelist_repeatGrid1_post959e7595": {
         "opacity": 1,
         // "position": "absolute",

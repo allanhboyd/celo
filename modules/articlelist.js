@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, ImageBackground, Dimensions, StatusBar, FlatList } from 'react-native';
-import { Image as ReactImage } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, StatusBar, FlatList, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import Svg, { } from 'react-native-svg';
-import { Path as SvgPath } from 'react-native-svg';
 import ArticleListItem from '../components/artlicle_list_item'
+import BottomNavigator from '../components/bottom_nav';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -24,8 +22,12 @@ export default class Articlelist extends Component {
     return (
       <View data-layer="c8b81245-3906-4187-abb0-1621eff4c360" style={styles.articlelist}>
         <ImageBackground data-layer="e71fa9e2-5bb1-4161-8b7e-85a365aa0607" source={require('../assets/maskGroup3.png')} style={styles.articlelist_maskGroup3} />
-        <ReactImage data-layer="f8b8d495-3749-44fb-a45f-1fd7c6a46afe" source={require('../assets/menu.png')} style={styles.articlelist_menu} />
-        <ReactImage data-layer="598fcfda-0feb-4ed1-bb13-4ed9c387729f" source={require('../assets/wallet.png')} style={styles.articlelist_wallet} />
+        <Image data-layer="f8b8d495-3749-44fb-a45f-1fd7c6a46afe" source={require('../assets/menu.png')} style={styles.articlelist_menu} />
+
+     
+        <Image data-layer="598fcfda-0feb-4ed1-bb13-4ed9c387729f" source={require('../assets/wallet.png')} style={styles.articlelist_wallet} />
+        
+
         <Text data-layer="758b1726-8ad4-4b0c-aab7-a4d10cbb7a33" style={styles.articlelist_username}>AnonymousA</Text>
         <Text data-layer="a2d36fd9-cc22-4e23-8208-a96aa493d301" style={styles.articlelist_hometip}>See what other whistle blowers
 have written</Text>
@@ -60,16 +62,18 @@ have written</Text>
             { name: "AnonymousZ" }
           ]}
 
-          renderItem={(item) => <ArticleListItem data={item} />}
+          renderItem={(item) => <ArticleListItem data={item} navigator={this.props.navigator} />}
           keyExtractor={item => item.name}
           contentContainerStyle={{
             flexGrow: 1,
           }}
 
-          style = {{flex : 1,paddingBottom:300}}
-          nestedScrollEnabled = {false}
+          style={{ flex: 1, paddingBottom: 300 }}
+          nestedScrollEnabled={false}
 
         />
+
+        <BottomNavigator home={true} navigator={this.props.navigator} />
 
       </View>
     );
@@ -104,7 +108,7 @@ const styles = StyleSheet.create({
     "top": 0,
     "right": 0,
     "bottom": 0,
-    flex:1
+    flex: 1
   },
 
   "articlelist_maskGroup3": {

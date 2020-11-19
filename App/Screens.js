@@ -71,19 +71,19 @@ export const ProfileScreen = ({ navigation }) => {
 };
 
 export const Articles = ({navigation}) =>{
-  return(<Articlelist/>);
+  return(<Articlelist navigator = {navigation}/>);
 }
 
 export const TransferAmount = ({navigation}) => {
-  return(<Transfer/>);
+  return(<Transfer navigator = {navigation}/>);
 }
 
 export const History = ({navigation}) =>{
-  return(<TransferHistory/>)
+  return(<TransferHistory navigator = {navigation}/>)
 }
 
 export const Read = ({navigation}) => {
-  return(<ReadArticle/>);
+  return(<ReadArticle navigator = {navigation}/>);
 }
 
 export const Splash = ({}) => {
