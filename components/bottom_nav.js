@@ -55,9 +55,8 @@ export default class BottomNavigator extends Component {
         console.log(this.props.navigator)
         return (
             <View data-layer="c7beef1d-0991-46b0-88ca-9c7f02025046" style={[styles.profile_bottomnav, styles.profile_bottomnav_toolbarbackground]}>
-                <TouchableOpacity onPress={ () => this.changeSelection('home')}>
+                <TouchableOpacity onPress={ () => {this.props.navigator_btn.push("Articles");this.changeSelection('home');}}>
                     <Image data-layer="445dacba-f9bd-4e1a-8274-c1e01b4d69f7"
-                           onpress={() => this.props.navigator.push('Articles')}
                            source={require('../assets/home.png')} style={this.state.home ? styles.bottom_nav_icon_selected : styles.bottom_nav_icon} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={ () => this.changeSelection('edit')}>

@@ -12,6 +12,7 @@ import {
   Details,
   Search2,
   ProfileScreen,
+    TransferAmount,
   Splash
 } from "./Screens";
 import Splashscreen from "../modules/splashscreen";
@@ -30,13 +31,13 @@ const AuthStackScreen = () => (
 
 <AuthStack.Screen
       name="Profile"
-      component={TransferAmount}
+      component={ProfileScreen}
       options={{ title: "Profile", headerShown:false}}
     />
 
     <AuthStack.Screen
-      name="SignIn"
-      component={ProfileScreen}
+      name="TransferAmount"
+      component={TransferAmount}
       options={{ title: "Sign In", headerShown:false}}
     />
     {/* <AuthStack.Screen
