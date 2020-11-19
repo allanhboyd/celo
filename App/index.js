@@ -30,8 +30,14 @@ const AuthStackScreen = () => (
 
 <AuthStack.Screen
       name="Profile"
-      component={ProfileScreen}
+      component={TransferAmount}
       options={{ title: "Profile", headerShown:false}}
+    />
+
+    <AuthStack.Screen
+      name="SignIn"
+      component={ProfileScreen}
+      options={{ title: "Sign In", headerShown:false}}
     />
     {/* <AuthStack.Screen
       name="CreateAccount"
@@ -72,42 +78,21 @@ const ProfileStackScreen = () => (
   </ProfileStack.Navigator>
 );
 
+const TabsScreen = () => (
+  <Tabs.Navigator>
+    <Tabs.Screen name="Home" component={HomeStackScreen} />
+    <Tabs.Screen name="Search" component={SearchStackScreen} />
+  </Tabs.Navigator>
+);
 
 const Drawer = createDrawerNavigator();
 const DrawerScreen = () => (
   <Drawer.Navigator initialRouteName="Profile">
-    <Drawer.Screen name="Profile" component={TabsScreen} />
+    <Drawer.Screen name="Home" component={TabsScreen} />
     <Drawer.Screen name="Profile" component={ProfileStackScreen} />
   </Drawer.Navigator>
 );
 
-const Tab = createBottomTabNavigator();
-
-const TabsScreen = () => (
-  <Tabs.Navigator screenOptions={({ route }) => ({
-    tabBarIcon: ({ focused, color, size }) => {
-      let iconName;
-
-      if (route.name === 'Home') {
-        iconName = focused
-          ? 'ios-information-circle'
-          : 'ios-information-circle-outline';
-      } else if (route.name === 'Settings') {
-        iconName = focused ? 'ios-list-box' : 'ios-list';
-      }
-
-      // You can return any component that you like here!
-      return <Ionicons name={iconName} size={size} color={color} />;
-    },
-  })}
-  tabBarOptions={{
-    activeTintColor: 'tomato',
-    inactiveTintColor: 'gray',
-  }}>
-   <Tab.Screen name="Home" component={ProfileScreen} />
-        <Tab.Screen name="Settings" component={Home} />
-  </Tabs.Navigator>
-);
 
 const RootStack = createStackNavigator();
 const RootStackScreen = ({ userToken }) => (
@@ -165,12 +150,10 @@ export default () => {
     return <Splashscreen />;
   }
 
-  const Tab = createBottomTabNavigator();
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
         <RootStackScreen userToken={userToken} />
-        
       </NavigationContainer>
     </AuthContext.Provider>
   );
