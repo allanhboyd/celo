@@ -14,7 +14,8 @@ import {
   ProfileScreen,
   Splash,
   Articles,
-  Read
+  Read,
+  TransferAmount
 } from "./Screens";
 import Splashscreen from "../modules/splashscreen";
 
@@ -23,7 +24,7 @@ const AuthStackScreen = () => (
   <AuthStack.Navigator>
     <AuthStack.Screen
       name="Profile"
-      component={Read}
+      component={TransferAmount}
       options={{ title: "Profile", headerShown:false}}
     />
 

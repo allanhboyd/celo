@@ -6,6 +6,7 @@ import Loginpage from "../modules/loginpage";
 import Profile from '../modules/profile';
 import Articlelist from "../modules/articlelist";
 import ReadArticle from '../modules/readarticle'
+import Transfer from '../modules/transfer'
 
 
 const ScreenContainer = ({ children }) => (
@@ -70,6 +71,10 @@ export const ProfileScreen = ({ navigation }) => {
 
 export const Articles = ({navigation}) =>{
   return(<Articlelist/>);
+}
+
+export const TransferAmount = ({navigation}) => {
+  return(<Transfer/>);
 }
 
 export const Read = ({navigation}) => {
