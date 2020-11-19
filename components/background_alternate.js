@@ -13,7 +13,7 @@ export default class Background extends Component{
 
     render(){
         return(
-            <ImageBackground data-layer="f7099a0d-164e-4241-a9b5-2f0b55f6ccfa" source={require('../assets/backgroundsplash.png')} style={styles.loginpage_backgroundsplash} />
+            <ImageBackground data-layer="f7099a0d-164e-4241-a9b5-2f0b55f6ccfa" source={require('../assets/appbackground.png')} style={styles.loginpage_backgroundsplash} />
         );
     }
 

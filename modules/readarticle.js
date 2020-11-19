@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 import { Image as ReactImage } from 'react-native';
 import SolidToolbar from '../components/solid_toolbar'
 import UserLabel from '../components/user_date_label'
+import Background from '../components/background_alternate'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -22,6 +23,7 @@ export default class Readarticle extends Component {
 
     return (
       <View data-layer="e380a9c2-82cf-40b6-86af-3fe7e6f895a3" style={styles.readarticle}>
+        <Background/>
         <SolidToolbar title='Posts' />
         <ScrollView>
 
