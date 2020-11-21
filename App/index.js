@@ -3,7 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-
+import '../global';
+import {YellowBox} from "react-native";
 import { AuthContext } from "./context";
 import {
   SignIn,
@@ -19,7 +20,11 @@ import {
   Articles
 } from "./Screens";
 import Splashscreen from "../modules/splashscreen";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+
+YellowBox.ignoreWarnings([
+    "Warning: The provided value 'moz",
+    "Warning: The provided value 'ms-stream",
+])
 
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
@@ -49,7 +54,7 @@ const AuthStackScreen = () => (
       options={{ title: "Profile", headerShown: false }}
     />
 
-   
+
 
 <AuthStack.Screen
       name="Read"
