@@ -1,4 +1,4 @@
-# Celo Whistle Blower App
+# Anonymous Whistle Frontend
 
 Secure recording of Whistle Blower info and sponsoring of the respective whistle blower
 
