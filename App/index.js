@@ -7,30 +7,80 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 import { AuthContext } from "./context";
 import {
   SignIn,
-  CreateAccount,
   Search,
   Home,
   Details,
   Search2,
-  Profile,
-  Splash
+  ProfileScreen,
+  TransferAmount,
+  Splash,
+  History,
+  Read,
+  Articles,
+  CreatePost
 } from "./Screens";
 import Splashscreen from "../modules/splashscreen";
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
   <AuthStack.Navigator>
 
-    <AuthStack.Screen
+<AuthStack.Screen
       name="SignIn"
       component={SignIn}
-      options={{ title: "Sign In", headerShown:false}}
+      options={{ title: "Sign In", headerShown: false }}
     />
+
     <AuthStack.Screen
-      name="CreateAccount"
-      component={CreateAccount}
-      options={{ title: "Create Account" }}
+      name="Create"
+      component={CreatePost}
+      options={{ title: "Create", headerShown: false }}
     />
+
+    
+
+    <AuthStack.Screen
+      name="Articles"
+      component={Articles}
+      options={{ title: "Articles", headerShown: false }}
+    />
+
+    <AuthStack.Screen
+      name="Transfer"
+      component={TransferAmount}
+      options={{ title: "Transfer", headerShown: false }}
+    />
+
+    <AuthStack.Screen
+      name="Profile"
+      component={ProfileScreen}
+      options={{ title: "Profile", headerShown: false }}
+    />
+
+
+
+    <AuthStack.Screen
+      name="Read"
+      component={Read}
+      options={{ title: "Read", headerShown: false }}
+    />
+
+
+
+    <AuthStack.Screen
+      name="TransferAmount"
+      component={TransferAmount}
+      options={{ title: "TransferAmount", headerShown: false }}
+    />
+
+
+    <AuthStack.Screen
+      name="History"
+      component={History}
+      options={{ title: "History", headerShown: false }}
+    />
+
   </AuthStack.Navigator>
 );
 
@@ -80,6 +130,7 @@ const DrawerScreen = () => (
   </Drawer.Navigator>
 );
 
+
 const RootStack = createStackNavigator();
 const RootStackScreen = ({ userToken }) => (
   <RootStack.Navigator headerMode="none">
@@ -92,14 +143,15 @@ const RootStackScreen = ({ userToken }) => (
         }}
       />
     ) : (
-      <RootStack.Screen
-        name="Auth"
-        component={AuthStackScreen}
-        options={{
-          animationEnabled: false
-        }}
-      />
-    )}
+        <RootStack.Screen
+          name="Auth"
+          component={AuthStackScreen}
+          options={{
+            animationEnabled: false
+          }}
+        />
+      )}
+
   </RootStack.Navigator>
 );
 
@@ -127,13 +179,14 @@ export default () => {
   React.useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1000);
   }, []);
 
   if (isLoading) {
     // return <Splash />;
     return <Splashscreen />;
   }
+
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>

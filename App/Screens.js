@@ -1,13 +1,14 @@
 import React from "react";
-import  { ImageBackground } from 'react-native';
-import {StyleSheet, View, TextInput, Button, Text, TouchableOpacity, Platform, PermissionsAndroid, Image, BackHandler, AppRegistry} from "react-native";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import {StyleSheet, View, Button, Text} from "react-native";
 import { AuthContext } from "./context";
-import backgroundImage from '../assets/bg1.png';
-import logo from '../assets/wb_logo.png';
-import colors from '../styles/colors';
 import SplashScreen from '../modules/splashscreen'
 import Loginpage from "../modules/loginpage";
+import Profile from '../modules/profile';
+import Articlelist from "../modules/articlelist";
+import ReadArticle from '../modules/readarticle';
+import Transfer from '../modules/transfer';
+import TransferHistory from '../modules/transfer_history';
+import NewPost from "../modules/new_post";
 
 
 const ScreenContainer = ({ children }) => (
@@ -62,83 +63,47 @@ export const Search2 = () => (
   </ScreenContainer>
 );
 
-export const Profile = ({ navigation }) => {
+export const ProfileScreen = ({ navigation }) => {
   const { signOut } = React.useContext(AuthContext);
 
   return (
-    <ScreenContainer>
-      <Text>Profile Screen</Text>
-      <Button title="Drawer" onPress={() => navigation.toggleDrawer()} />
-      <Button title="Sign Out" onPress={() => signOut()} />
-    </ScreenContainer>
+   <Profile navigator = {navigation} />
   );
 };
 
-export const Splash = ({navigation}) => {
+export const Articles = ({navigation}) =>{
+  return(<Articlelist navigator = {navigation}/>);
+}
+
+export const TransferAmount = ({navigation}) => {
+  return(<Transfer navigator = {navigation}/>);
+}
+
+export const History = ({navigation}) =>{
+  return(<TransferHistory navigator = {navigation}/>)
+}
+
+export const Read = ({navigation}) => {
+  return(<ReadArticle navigator = {navigation}/>);
+}
+
+export const Splash = ({}) => {
     return(
       <SplashScreen/>
     )
   };
 
 export const SignIn = ({ navigation }) => {
-  const { signIn } = React.useContext(AuthContext);
 
   return(
     <Loginpage navigator = {navigation} />
   )
 
-//   return (
-//     <ImageBackground style={styles.image}>
-//     <TouchableWithoutFeedback style={styles.container}>
-//    <View>
-//        <Image source={logo}  />
-//        <Text style={styles.main_description}>The Anonymous</Text>
-//        <Text style={styles.main_title}>Whistle</Text>
-//    </View>
-//    <View >
-//       <TextInput
-          
-//            textContentType='display_name'
-//            placeholder="Display name"
-//            name="displayName"
-//            onChangeText={display_name => this.setState({display_name})}>
-//        </TextInput>
-//        </View>
-//        <View >
-//                <TextInput
-              
-//                placeholder="Your secret"
-//                name="secret_code"
-//                secureTextEntry={true}
-//                onChangeText={secret_code => this.setState({secret_code})}>
-//            </TextInput>
-//        </View>
-
-//        <TouchableOpacity style={styles.red_button}>
-//            <Text
-//                color="blue"
-//                onPress={() => navigation.push("CreateAccount")}
-//                style={styles.red_button_text}
-//            >
-//            Enter
-//            </Text>
-//        </TouchableOpacity>
-// </TouchableWithoutFeedback>
-// </ImageBackground>
-// )
-
 };
 
-export const CreateAccount = () => {
-  const { signUp } = React.useContext(AuthContext);
-
-  return (
-    <ScreenContainer>
-      <Text>Create Account Screen</Text>
-      <Button title="Sign Up" onPress={() => signUp()} />
-    </ScreenContainer>
-  );
-};
+export const CreatePost = ({navigation}) => {
+  return(<NewPost/>)
+}
 
 const styles = StyleSheet.create({
 

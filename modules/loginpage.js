@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, TextInput, ScrollView, ImageBackground, Dimensions, TouchableOpacity, Image, TouchableOpacityComponent} from 'react-native';
-import Svg, {} from 'react-native-svg';
-import {Path as SvgPath} from 'react-native-svg';
-
+import {StyleSheet, Text, View, TextInput, Dimensions, TouchableOpacity, Image} from 'react-native';
+import Background from '../components/background'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -25,7 +23,7 @@ export default class Loginpage extends Component {
     console.log({navigator})
     return (
       <View data-layer="aaca3242-7f6b-4f00-9637-5bc819e19fbe" style={styles.loginpage}>
-        <ImageBackground data-layer="f7099a0d-164e-4241-a9b5-2f0b55f6ccfa" source={require('../assets/backgroundsplash.png')} style={styles.loginpage_backgroundsplash} />
+        <Background />
         <Image source = {require('../assets/wb_logo.png')} style = {styles.icon} />
             <Text data-layer="b2d145f8-c3e6-4e9b-bab2-b322608ec64a" style={styles.loginpage_largetitledescription}>The Anonymous</Text>
             <Text data-layer="717da704-aeab-4640-b741-f0d079c75380" style={styles.loginpage_largetitle}>Whistle</Text>
@@ -36,7 +34,9 @@ export default class Loginpage extends Component {
                 <TextInput data-layer="459c9658-55ba-458d-940b-f28ebef092f4" style={styles.loginpage_diplaynameinput_label} placeholder = 'Your Secret'></TextInput>
             </View>
             <TouchableOpacity style={[styles.loginpage_redbutton, styles.loginpage_redbutton_rectangle3]} >
-                <Text data-layer="db5d44fb-d0d0-4a90-a323-544d27597fda" style={styles.loginpage_redbutton_enter}>Enter</Text>
+                <Text data-layer="db5d44fb-d0d0-4a90-a323-544d27597fda" style={styles.loginpage_redbutton_enter}
+                onPress={()=> {this.props.navigator.push("Articles")}}
+                >Enter</Text>
             </TouchableOpacity>
       </View>
     );
